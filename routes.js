@@ -49,15 +49,15 @@ const requestHandler = (req, res) =>{
 // module.exports= requestHandler;
 
 
-// module.exports = {
-//     handler: requestHandler,
-//     someText: "This is some text"
-// }
+module.exports = {
+    handler: requestHandler,
+    someText: "This is some text"
+}
 
 // module.exports.handler = requestHandler;
 // module.exports.someText = "Some Text";
 
-exports.handler = requestHandler;
-exports.someText = "Some Text";
+// exports.handler = requestHandler;
+// exports.someText = "Some Text";
 
 
