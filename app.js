@@ -5,21 +5,32 @@ const server = http.createServer((req, res) => {
     const url = req.url;
     const method = req.method;
     if (url === "/") {
-        res.setHeader("Conteny-Type", "text/html");
-        res.write("<html>");
-        res.write("<head><title>Register</title></head>");
-        res.write(`
+        // const mymessage = fs.readFileSync('message.txt')
+        fs.readFile('message.txt',{encoding: "utf-8"},(err,data)=>{
+            if(err){
+                console.log(err);
+            }
+
+            res.setHeader("Conteny-Type", "text/html");
+            res.write("<html>");
+            res.write("<head><title>Register</title></head>");
+            res.write(`
         <body>
             <h1>Register</h1>
+            <p>All Messages</p>
+            <p>${data}</p>
             <form action="/message" method="post">
                 <input type ="text" name="message">
                 <button type="submit">Submit</button>
             </form>
         </body>`);
-        res.write("</html>");
-        return res.end();
+            res.write("</html>");
+            return res.end();
+        });
+        
+        
     } 
-    if(url==="/message" && method ==="POST"){
+    else if(url==="/message" && method ==="POST"){
         const body = [];
         req.on('data',(chunk)=>{
             // console.log(chunk);
@@ -28,9 +39,8 @@ const server = http.createServer((req, res) => {
 
         return req.on('end',()=>{
             const parsedBody = Buffer.concat(body).toString();
-            const message = parsedBody.split("=")[1];
-            // console.log(parsedBody);
-            fs.writeFile("message.txt", message,(error=>error));
+            const message = parsedBody.split("=")[1] +"\n";
+            fs.writeFileSync("message.txt", message);
             res.statusCode = 302;
             res.setHeader('Location','/');
             return res.end();
