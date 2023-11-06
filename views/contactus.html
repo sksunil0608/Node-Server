@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Add Product</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+  </head>
+
+  <body>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+          <li class="main-header__item"><a class="active" href="/">Shop</a></li>
+          <li class="main-header__item">
+            <a href="/admin/add-product">Add Product</a>
+          </li>
+          <li class="main-header__item">
+            <a href="contactus">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Contact Us</h1>
+      <div class="form-border" id="form-border">
+        <form class="form" id="form" action="/success" method="POST">
+          <div id="form-area" class="form-area">
+            <h1>Contact us</h1>
+            <hr />
+            <label for="fname" id="fname-label">Name</label><br />
+            <input
+              class="input"
+              type="text"
+              name="fname"
+              id="fname"
+              autocomplete="name"
+            /><br />
+
+            <label for="email">Email</label><br />
+            <input
+              class="input"
+              type="text"
+              name="email"
+              id="email"
+              autocomplete="email"
+            /><br />
+
+            <button class="submit-button" id="submit-button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
