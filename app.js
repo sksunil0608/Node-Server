@@ -7,8 +7,8 @@ next()
 })
 app.use((req, res, next) => {
   console.log("I am the Second middleware!");
-  res.send('<h1>This is second MiddleWare</h1>')
+  res.send({"name":"Sunil"});
 });
 const server = http.createServer(app);
     
-server.listen(4000);
+app.listen(4000);
