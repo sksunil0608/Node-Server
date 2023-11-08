@@ -1,1 +1,16 @@
-[{"id":"54321","title":"A Book","imageUrl":"https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg","description":"This is an awesome book!","price":"19"},{"title":"Sangharsh","imageUrl":"https://rukminim2.flixcart.com/image/416/416/xif0q/book/s/v/z/sangharsh-apane-viruddh-by-acharya-prashant-original-imagt5snwcpbhvqz.jpeg?q=70","description":"Best Book to Read","price":"299","id":"0.8645260589912707"}]
+[
+  {
+    "id": "54321",
+    "title": "A Book",
+    "imageUrl": "https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg",
+    "description": "This is an awesome book!",
+    "price": "19"
+  },
+  {
+    "title": "Sangharsh",
+    "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/book/s/v/z/sangharsh-apane-viruddh-by-acharya-prashant-original-imagt5snwcpbhvqz.jpeg?q=70",
+    "description": "Best Book to Read",
+    "price": "299",
+    "id": "0.8645260589912707"
+  }
+]
