@@ -1,16 +1,1 @@
-[
-  {
-    "id": "54321",
-    "title": "A Book",
-    "imageUrl": "https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg",
-    "description": "This is an awesome book!",
-    "price": "19"
-  },
-  {
-    "title": "Sangharsh",
-    "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/book/s/v/z/sangharsh-apane-viruddh-by-acharya-prashant-original-imagt5snwcpbhvqz.jpeg?q=70",
-    "description": "Best Book to Read",
-    "price": "299",
-    "id": "0.8645260589912707"
-  }
-]
+[{"id":"0.5584291947865296","title":" Camera ","imageUrl":"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg","description":"\" 21+ Stock Photo Sites That Offer Free Images for Commercial Use \"","price":""},{"id":"0.2660390898173479","title":"Sangharsh","imageUrl":"https://rukminim2.flixcart.com/image/416/416/xif0q/book/s/v/z/sangharsh-apane-viruddh-by-acharya-prashant-original-imagt5snwcpbhvqz.jpeg?q=70","description":"This is the best book everyone should read","price":"299"}]
