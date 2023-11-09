@@ -3,21 +3,34 @@ const Cart = require('../models/cart')
 
 
 exports.getProducts = (req, res, next) => {
-  Product.fetchAll().then(([rows])=>{
-    res.render("shop/product-list", {
-      prods: rows,
-      pageTitle: "All Products",
-      path: "/products",
-    });
-  }).catch(err=>console.log(err));
+  Product.findAll()
+    .then((products) => {
+      res.render("shop/index", {
+        prods: products,
+        pageTitle: "Shop",
+        path: "/",
+      });
+    })
+    .catch((err) => console.log(err));
+
 };
 
 
 exports.getProduct = (req,res,next)=>{
-  const prodId = req.params.prodId;
-  Product.findById(prodId).then(([product])=>{
+  // Same can be done by fetch all product and filter that
+  // const prodId = req.params.prodId;
+  // Product.findAll({where:{id:prodId}}).then((products)=>{
+  //     res.render("shop/product-detail", {
+  //       product: products[0],
+  //       pageTitle: products[0].title,
+  //       path: "/product",
+  //     });
+  // }).catch(err=>console.log(err))
+
+
+  Product.findByPk(prodId).then((product)=>{
     res.render("shop/product-detail", {
-      product: product[0],
+      product: product,
       pageTitle: product.title,
       path: "/product",
     });
@@ -26,14 +39,15 @@ exports.getProduct = (req,res,next)=>{
 
 
 exports.getIndex = (req, res, next) => {
-  Product.fetchAll().then(([rows])=>{
-    res.render("shop/index", {
-      prods: rows,
-      pageTitle: "Shop",
-      path: "/",
-    });
-  })
-  .catch(err=>console.log(err));
+
+  Product.findAll().then((products)=>{
+      res.render("shop/index", {
+        prods: products,
+        pageTitle: "Shop",
+        path: "/",
+      });
+  }).catch(err=>console.log(err));
+
    
 };
 
