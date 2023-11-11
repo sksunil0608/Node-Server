@@ -1,4 +1,17 @@
 const User = require("../models/user");
+const { use } = require("../routes/admin");
+
+
+exports.getUser = async (req,res,next)=>{
+    const userId = req.params.userId
+    try{
+        const user = await User.findByPk(userId);
+        res.status(200).json(user);
+    }catch(err){
+        console.log(err)
+    }
+}
+
 
 exports.postAddUser = async (req, res, next) => {
   const name = req.body.name;
@@ -39,8 +52,10 @@ exports.getAllUsers = async (req, res, next) => {
 exports.deleteUser = async (req, res, next) => {
   const userId = req.params.userId;
   try {
-    const user = await User.findByPk(userId);
-    await user.destroy();
+    // const user = await User.findByPk(userId);
+    // await user.destroy();
+
+    const user = await User.destroy({where:{id:userId}})
     res.json({ "Deleted User": user });
   } catch (err) {
     console.log(err);
@@ -63,11 +78,9 @@ exports.postEditUser = async (req, res, next) => {
       user.phone = phone;
       user.time = time;
       user.date = date;
+      await user.save();
 
-    //   await user.save();
-
-      res
-        .status(201)
+      res.status(201)
         .json({ success: "User Details Updated", newUserDetails: user });
     } catch (err) {
       console.log(err);

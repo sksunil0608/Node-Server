@@ -18,14 +18,14 @@ const User = sequelize.define('user',{
         type: Sequelize.STRING,
         unique:true,
         allowNull:false
-    },
-    time:{
-        type:Sequelize.STRING
-    },
-    date:{
-        type:Sequelize.DATEONLY,
-        default: new Date()
-    },
+    }
+    // time:{
+    //     type:Sequelize.STRING
+    // },
+    // date:{
+    //     type:Sequelize.DATEONLY,
+    //     default: new Date()
+    // },
 
 })
 
